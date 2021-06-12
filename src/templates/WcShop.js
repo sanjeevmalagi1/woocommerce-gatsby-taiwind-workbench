@@ -2,8 +2,6 @@ import React from "react"
 
 const WcProduct = props => {
   const { pageContext } = props;
-  debugger;
-
   // const {
   //   id,
   //   name,
@@ -14,7 +12,7 @@ const WcProduct = props => {
 
   return (
     <>
-      <h1>Shop</h1>
+      <h1 className="text-4xl font-bold">Shop</h1>
       <div>
         This is shop front!
       </div>  
