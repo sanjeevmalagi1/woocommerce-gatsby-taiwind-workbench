@@ -1,3 +1,6 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+});
 const config = require('./config')
 
 module.exports = {
@@ -45,10 +48,10 @@ module.exports = {
 
         // set to false to not see verbose output during build 
         // default: true
-        verbose: config.woocommerceVerbose,
+        verbose: false,
 
         // true if using https. otherwise false.
-        https: config.woocommerceHTTPS,
+        https: false,
         api_keys: {
           consumer_key: config.woocommerceAPIConsumerKey,
           consumer_secret: config.woocommerceAPIConsumerSecret,
