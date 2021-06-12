@@ -1,3 +1,5 @@
+const config = require('./config')
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -32,24 +34,24 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        url: `http://3.108.139.224/graphql`,
+        url: config.wordpressURL,
       },
     },
     {
       resolve: `@pasdo501/gatsby-source-woocommerce`,
       options: {
         // Base URL of Wordpress site
-        api: '3.108.139.224',
+        api: config.woocommerceAPI,
 
         // set to false to not see verbose output during build 
         // default: true
-        verbose: true,
+        verbose: config.woocommerceVerbose,
 
         // true if using https. otherwise false.
-        https: false,
+        https: config.woocommerceHTTPS,
         api_keys: {
-          consumer_key: 'ck_20eb162e9ab42e4530937409b4d1ca6661bc54a6',
-          consumer_secret: 'cs_31d0281e1960b5149ea3193e808d50871336ba84',
+          consumer_key: config.woocommerceAPIConsumerKey,
+          consumer_secret: config.woocommerceAPIConsumerSecret,
         },
         // Array of strings with fields you'd like to create nodes for...
         fields: ['products', 'products/categories', 'products/attributes'],
